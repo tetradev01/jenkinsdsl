@@ -54,3 +54,19 @@ listView('Listview') {
         buildButton()
     }
 }
+
+job('job-dsl-deploy') {
+    description 'Deploy app to the demo server'
+    /*
+     * configuring ssh plugin to run docker commands
+     */
+    configure { project ->
+        project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
+            siteName 'vagrant@192.168.44.8:22'
+            postScript """
+ifconfig
+"""
+        }
+    }
+}
+
