@@ -39,20 +39,11 @@ mavenJob('job-dsl-package'){
   
   mavenInstallation('Maven 3.3.9')
   goals('package')
-}
 
-listView('Listview') {
-    jobs {
-        regex('job-dsl-.+')
-    }
-    columns {
-        status()
-        name()
-        lastSuccess()
-        lastFailure()
-        lastDuration()
-        buildButton()
-    }
+  publishers {
+        publishCloneWorkspace '**', '', 'Any', 'TAR', true, null
+        downstream 'job-dsl-deploy', 'SUCCESS'
+  }
 }
 
 job('job-dsl-deploy') {
@@ -70,3 +61,16 @@ ifconfig
     }
 }
 
+listView('Listview') {
+    jobs {
+        regex('job-dsl-.+')
+    }
+    columns {
+        status()
+        name()
+        lastSuccess()
+        lastFailure()
+        lastDuration()
+        buildButton()
+    }
+}
