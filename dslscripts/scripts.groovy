@@ -19,10 +19,8 @@ job('job-dsl-checkout') {
 }
 
 mavenJob('job-dsl-compile'){
-  scm{
-    cloneWorkspace 'job-dsl-checkout'
-  }
-  
+   
+  customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
   mavenInstallation('Maven 3.3.9')
   goals('compile')
   
@@ -33,9 +31,7 @@ mavenJob('job-dsl-compile'){
 }
 
 mavenJob('job-dsl-package'){
-  scm{
-    cloneWorkspace 'job-dsl-checkout'
-  }
+  customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
   
   mavenInstallation('Maven 3.3.9')
   goals('package')
@@ -53,9 +49,8 @@ job('job-dsl-deploy') {
      */
     configure { project ->
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
-            siteName 'vagrant@192.168.44.8:22'
             postScript """
-ifconfig
+scp /var/lib/jenkins/workspace/job-dsl-compile/target/JavaHelloWorldApp.war' vagrant@192.168.44.8:22:/var/
 """
         }
     }
