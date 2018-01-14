@@ -50,7 +50,7 @@ job('job-dsl-deploy') {
     configure { project ->
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
             postScript """
-scp /var/lib/jenkins/workspace/job-dsl-compile/target/JavaHelloWorldApp.war' vagrant@192.168.44.8:22:/var/
+scp /var/lib/jenkins/workspace/job-dsl-compile/target/JavaHelloWorldApp.war vagrant@192.168.44.8:22:/home/vagrant
 """
         }
     }
