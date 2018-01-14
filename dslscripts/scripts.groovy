@@ -48,7 +48,7 @@ job('job-dsl-deploy') {
      * configuring ssh plugin to run docker commands
      */
     steps{
-             shell 'sshpass -p "vagrant" scp /var/lib/jenkins/workspace/job-dsl-compile/target/JavaHelloWorldApp.war vagrant@192.168.44.8:22:/home/vagrant'
+             shell 'sshpass -p "vagrant" scp /var/lib/jenkins/workspace/job-dsl-compile/target/JavaHelloWorldApp.war vagrant@192.168.44.8:/home/vagrant'
       }
 }
 
