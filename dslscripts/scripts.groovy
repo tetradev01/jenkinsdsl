@@ -8,7 +8,7 @@ jenkins.model.Jenkins.theInstance.getProjects().each { job ->
 job('job-dsl-checkout') {
     
     scm {
-        github('IBM-Cloud/java-helloworld', 'master')
+        github('mkyong/spring3-mvc-maven-annotation-hello-world', 'master')
     }
   
    publishers {
