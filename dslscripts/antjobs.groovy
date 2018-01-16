@@ -12,7 +12,7 @@ job('antbuild') {
             buildFile('build.xml')
             javaOpt('-Xmx1g')
             javaOpts(['-Dprop2=value2', '-Dprop3=value3'])
-            antInstallation('Ant 1.8')
+            antInstallation('Ant 1.9.3')
         }
     }
 }
