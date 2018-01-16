@@ -1,4 +1,4 @@
-job('example') {
+job('antbuild') {
     steps {
         ant {
             targets(['clean', 'init', 'compile', 'war'])
