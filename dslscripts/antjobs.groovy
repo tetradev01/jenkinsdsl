@@ -16,3 +16,13 @@ job('antbuild') {
         }
     }
 }
+
+job('deploy') {
+    description 'Deploy app to the demo server'
+    /*
+     * configuring ssh plugin to run docker commands
+     */
+    steps{
+             shell 'sshpass -p "vagrant" scp /var/lib/jenkins/workspace/antbuild/build/helloworld-0.1-dev.war vagrant@192.168.44.8:/home/vagrant'
+      }
+}
