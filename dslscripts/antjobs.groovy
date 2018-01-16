@@ -1,4 +1,8 @@
 job('antbuild') {
+    scm {
+        github('ferdynice/helloworld-war', 'master')
+    }
+
     steps {
         ant {
             targets(['clean', 'init', 'compile', 'war'])
