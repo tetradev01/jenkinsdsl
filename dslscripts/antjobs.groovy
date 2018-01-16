@@ -15,6 +15,10 @@ job('antbuild') {
             antInstallation('Ant 1.9.3')
         }
     }
+
+    publishers {
+        downstream 'deploy', 'SUCCESS'
+    }
 }
 
 job('deploy') {
