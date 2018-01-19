@@ -27,6 +27,17 @@ job('deploy') {
      * configuring ssh plugin to run docker commands
      */
     steps{
-             shell 'sshpass -p "123456" scp /var/lib/jenkins/workspace/antbuild/build/helloworld-0.1-dev.war release@192.168.44.8:/var/lib/tomcat7/webapps'
+             shell 'sshpass -p "123456" scp /var/lib/jenkins/workspace/antbuild/build/helloworld-0.1-dev.war release@192.168.44.8:/home/release'
       }
+
+      configure { project ->
+        project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
+            siteName 'release@imaginarium.lexandro.com:22'
+            postScript """
+            echo 'coping...'
+            sudo sshpass -p '123456' cp /home/release/helloworld-0.1-dev.war /var/lib/tomcat7/webapps
+            echo 'copied'
+            """
+        }
+    }
 }
