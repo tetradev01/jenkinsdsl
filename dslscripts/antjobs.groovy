@@ -35,7 +35,7 @@ job('deploy') {
             siteName 'release@192.168.44.8:22'
             postScript """
             echo 'coping...'
-            sudo sshpass -p '123456' cp /home/release/helloworld-0.1-dev.war /var/lib/tomcat7/webapps
+            cp /home/release/helloworld-0.1-dev.war /var/lib/tomcat7/webapps
             echo 'copied'
             """
         }
