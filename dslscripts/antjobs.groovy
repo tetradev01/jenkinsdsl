@@ -5,7 +5,7 @@ job('antbuild') {
 
     steps {
         ant {
-            prop('version', '0.1-dev')
+            prop('version', 'dev')
             prop('source', '1.7')
             prop('target', '1.7')
             buildFile('build.xml')
