@@ -31,7 +31,7 @@ job('deploy') {
       }
 
       steps {
-        remoteShell('release@127.0.0.1:2200') {
+        remoteShell('sshpass -p \'123456\' release@192.168.44.8') {
             command('echo Hello', 'echo World!')
         }
     }
