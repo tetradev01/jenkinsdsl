@@ -31,8 +31,8 @@ job('deploy') {
       }
 
       steps {
-        remoteShell('release@192.168.44.8:22') {
-            command('cp /home/release/helloworld-0.1-dev.war /var/lib/tomcat7/webapps')
+        remoteShell('release@192.168.44.8:2200') {
+            command('echo Hello', 'echo World!')
         }
     }
 }
