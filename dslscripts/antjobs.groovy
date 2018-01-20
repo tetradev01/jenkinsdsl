@@ -34,7 +34,8 @@ job('deploy') {
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
             siteName 'release@192.168.44.8:2200'
             postScript """
-            cp /home/release/helloworld-0.1-dev.war /var/lib/tomcat7/webapps
+            echo 'came here'
+            ifconfig
             """
         }
     }
