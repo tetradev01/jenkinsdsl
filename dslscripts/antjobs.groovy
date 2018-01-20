@@ -31,7 +31,7 @@ job('deploy') {
       }
 
       steps {
-        remoteShell('release@192.168.44.8:2200') {
+        remoteShell('release@127.0.0.1:2200') {
             command('echo Hello', 'echo World!')
         }
     }
