@@ -1,6 +1,6 @@
 job('antbuild') {
     scm {
-        github('ferdynice/helloworld-war', 'master')
+        github('tetradev01/demoapp', 'master')
     }
 
     steps {
