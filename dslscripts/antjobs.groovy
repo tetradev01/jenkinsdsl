@@ -22,6 +22,6 @@ job('deploy') {
      * configuring ssh plugin to run docker commands
      */
     steps{
-             shell 'sshpass -p \'123456\' scp /var/lib/jenkins/workspace/antbuild/build/helloworld-dev.war release@192.168.44.8:/opt/tomcat/webapps/'
+             shell 'sshpass -p \'123456\' scp /var/lib/jenkins/workspace/antbuild/build/helloworld-dev.war release@10.12.108.11:/opt/tomcat/webapps/'
       }
 }
