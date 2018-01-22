@@ -1,7 +1,7 @@
 job('job-dsl-checkout') {
     
     scm {
-        github('lexandro/integration', 'master')
+        github('kliakos/sparkjava-war-example', 'master')
     }
   
    publishers {
