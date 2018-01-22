@@ -1,7 +1,7 @@
 job('job-dsl-checkout') {
     
     scm {
-        github('mkyong/spring3-mvc-maven-annotation-hello-world', 'master')
+        github('tetradev01/hello-world-war', 'master')
     }
   
    publishers {
