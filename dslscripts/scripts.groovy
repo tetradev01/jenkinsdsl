@@ -25,8 +25,6 @@ mavenJob('job-dsl-compile'){
 
 mavenJob('job-dsl-package'){
   customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
-  
-  mavenInstallation('Maven 3.3.9')
   goals('package')
 
   publishers {
