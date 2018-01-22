@@ -1,7 +1,7 @@
 job('job-dsl-checkout') {
     
     scm {
-        github('IBM-Cloud/java-helloworld', 'master')
+        github('LeonisX/java9-modules-maven-hello-world', 'master')
     }
   
    publishers {
