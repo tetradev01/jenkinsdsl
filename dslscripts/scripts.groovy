@@ -1,10 +1,3 @@
-// purge jobs
-jenkins.model.Jenkins.theInstance.getProjects().each { job ->
-    if (!job.name.contains('seed') && !job.name.contains('Jenkins')) {
-        job.delete()
-    }
-}
-
 job('job-dsl-checkout') {
     
     scm {
