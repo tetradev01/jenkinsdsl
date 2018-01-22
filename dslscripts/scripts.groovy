@@ -1,7 +1,7 @@
 job('job-dsl-checkout') {
     
     scm {
-        github('LeonisX/java9-modules-maven-hello-world', 'master')
+        github('lexandro/integration', 'master')
     }
   
    publishers {
