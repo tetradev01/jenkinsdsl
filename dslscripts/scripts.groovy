@@ -5,7 +5,6 @@ job('job-dsl-checkout') {
     }
   
    publishers {
-        publishCloneWorkspace '**', '', 'Any', 'TAR', true, null
         downstream 'job-dsl-compile', 'SUCCESS'
     }
     
@@ -18,7 +17,6 @@ mavenJob('job-dsl-compile'){
   goals('compile')
   
   publishers {
-        publishCloneWorkspace '**', '', 'Any', 'TAR', true, null
         downstream 'job-dsl-package', 'SUCCESS'
    }
 }
@@ -29,7 +27,6 @@ mavenJob('job-dsl-package'){
     goals('package')
 
   publishers {
-        publishCloneWorkspace '**', '', 'Any', 'TAR', true, null
         downstream 'job-dsl-deploy', 'SUCCESS'
   }
 }
