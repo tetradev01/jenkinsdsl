@@ -21,7 +21,7 @@ mavenJob('job-dsl-compile'){
         downstream 'job-dsl-package', 'SUCCESS'
    }
     environment {
-        BUILD_ID='dontKillMe'
+        BUILD_ID=$BUILD_ID
     }
 }
 
