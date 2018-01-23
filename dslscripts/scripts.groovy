@@ -20,6 +20,9 @@ mavenJob('job-dsl-compile'){
   publishers {
         downstream 'job-dsl-package', 'SUCCESS'
    }
+    environment {
+        BUILD_ID='dontKillMe'
+    }
 }
 
 mavenJob('job-dsl-package'){
