@@ -1,7 +1,7 @@
 job('job-dsl-checkout') {
     
     scm {
-        github('kliakos/sparkjava-war-example', 'master')
+        github('IBM-Cloud/java-helloworld', 'master')
     }
   
    publishers {
