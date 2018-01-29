@@ -15,8 +15,7 @@ mavenJob('job-dsl-compile'){
   customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
   mavenInstallation('Maven 3.3.9')
   goals('compile')
-  archivingDisabled(true)
-  
+    
   publishers {
         downstream 'job-dsl-package', 'SUCCESS'
    }
@@ -26,8 +25,7 @@ mavenJob('job-dsl-package'){
     customWorkspace('/var/lib/jenkins/workspace/job-dsl-checkout')
     mavenInstallation('Maven 3.3.9')
     goals('package')
-    archivingDisabled(true)
-
+    
   publishers {
         downstream 'job-dsl-deploy', 'SUCCESS'
   }
