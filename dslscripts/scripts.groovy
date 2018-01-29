@@ -1,7 +1,7 @@
 job('job-dsl-checkout') {
     
     scm {
-        github('IBM-Cloud/java-helloworld', 'master')
+        github('tetradev01/hello-world-war', 'master')
     }
   
    publishers {
