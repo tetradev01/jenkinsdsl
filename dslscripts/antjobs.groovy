@@ -17,7 +17,7 @@ job('antbuild') {
 }
 
 job('deploy') {
-    description 'Deploy app to the demo server'
+    description 'Deploy app to the demo application server'
     /*
      * configuring ssh plugin to run docker commands
      */
