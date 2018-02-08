@@ -1,7 +1,7 @@
 job('nodejs-dsl-checkout') {
     
     scm {
-        github('azat-co/nodejs-hello-world', 'master')
+        github('tetradev01/nodejsapp', 'master')
     }
   
    publishers {
