@@ -41,9 +41,8 @@ job('nodejs-dsl-archive'){
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
             siteName 'release@10.12.108.11:22'
             postScript """        
-            	tar -zcvf /var/archive/app.tar.gz /var/myapp/
-            	rm -rf /var/myapp/*
-				"""
+            	tar -zcvf /var/archive/app.tar.gz /var/myapp/           
+	      """
             }
 	}
 
