@@ -52,14 +52,9 @@ job('nodejs-dsl-archive'){
 }
 
 job('nodejs-dsl-deploy'){
-
-	configure { project ->
-        project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
-            siteName 'release@10.12.108.11:22'
-            postScript """
-            	cd /var/myapp
-            	git pull origin master
-				"""
-        }
+	steps{
+		shell 'cd /var/myapp'
+		shell 'git pull'
+	}
     }
 }
