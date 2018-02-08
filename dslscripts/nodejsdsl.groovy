@@ -57,4 +57,3 @@ job('nodejs-dsl-deploy'){
 		shell 'git pull'
 	}
     }
-}
