@@ -25,7 +25,7 @@ job('nodejs-dsl-test'){
 	customWorkspace('/var/lib/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
-		shell 'nodejs server.js &'
+		shell 'nodejs server.js'
 		shell 'npm test'
 	}
 
