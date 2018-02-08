@@ -25,8 +25,9 @@ job('nodejs-dsl-test'){
 	customWorkspace('/var/lib/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
-		shell 'nodejs server.js &'
+		shell 'npm start'
 		shell 'npm test'
+		shell 'npm stop'
 	}
 
 	publishers{
