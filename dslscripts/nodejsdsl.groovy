@@ -43,7 +43,7 @@ job('nodejs-dsl-archive'){
             	tar -zcvf /var/archive/app.tar.gz /var/myapp/
             	rm -rf /var/myapp/*
 				"""
-        }
+            }
 	}
 
 	publishers{
@@ -52,8 +52,13 @@ job('nodejs-dsl-archive'){
 }
 
 job('nodejs-dsl-deploy'){
-	steps{
-		shell 'cd /var/myapp'
-		shell 'git pull'
+	configure { project ->
+        project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
+            siteName 'release@10.12.108.11:22'
+            postScript """        
+            	cd /var/myapp
+            	git pull origin master
+				"""
+            }
 	}
     }
