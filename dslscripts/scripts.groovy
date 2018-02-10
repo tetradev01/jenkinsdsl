@@ -1,3 +1,4 @@
+
 job('job-dsl-checkout') {
     
     scm {
@@ -39,16 +40,11 @@ job('job-dsl-deploy') {
       }
 }
 
-listView('Listview') {
-    jobs {
-        regex('job-dsl-.+')
-    }
-    columns {
-        status()
-        name()
-        lastSuccess()
-        lastFailure()
-        lastDuration()
-        buildButton()
+deliveryPipelineView(jobNamePrefix + ' delivery pipeline') {
+    showAggregatedPipeline true
+    enableManualTriggers true
+    pipelineInstances 5
+    pipelines {
+        component('job-dsl' + ' delivery pipeline', 'job-dsl-checkout')
     }
 }
