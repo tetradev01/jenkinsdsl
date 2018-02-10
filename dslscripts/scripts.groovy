@@ -9,6 +9,10 @@ job('job-dsl-checkout') {
     scm {
         github('tetradev01/hello-world-war', 'master')
     }
+    
+    triggers {
+        githubPush()
+    }
   
    publishers {
         downstream 'job-dsl-compile', 'SUCCESS'
