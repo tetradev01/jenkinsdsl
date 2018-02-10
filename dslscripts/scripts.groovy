@@ -40,7 +40,7 @@ job('job-dsl-deploy') {
       }
 }
 
-deliveryPipelineView(jobNamePrefix + ' delivery pipeline') {
+deliveryPipelineView(''job-dsl'' + ' delivery pipeline') {
     showAggregatedPipeline true
     enableManualTriggers true
     pipelineInstances 5
