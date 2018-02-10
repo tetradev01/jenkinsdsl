@@ -1,3 +1,8 @@
+jenkins.model.Jenkins.theInstance.getProjects().each { job ->
+    if (!job.name.contains('bootstrap') && !job.name.contains('Jenkins')) {
+        job.delete()
+    }
+}
 
 job('job-dsl-checkout') {
     
