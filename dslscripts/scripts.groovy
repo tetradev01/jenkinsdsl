@@ -3,6 +3,13 @@ jenkins.model.Jenkins.theInstance.getProjects().each { job ->
         job.delete()
     }
 }
+// purge views
+jenkins.model.Jenkins.theInstance.getViews().each {
+    view ->
+        if (view.name != 'All' && view.name != 'Jenkins') {
+            jenkins.model.Jenkins.theInstance.deleteView(view)
+        }
+}
 
 job('job-dsl-checkout') {
     
