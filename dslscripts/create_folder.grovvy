@@ -1,4 +1,4 @@
-String basePath = 'example1'
+String basePath = 'folders'
 String repo = 'sheehan/grails-example'
 
 folder(basePath) {
