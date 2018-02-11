@@ -45,11 +45,3 @@ job('job-dsl-deploy') {
       }
 }
 
-deliveryPipelineView('job-dsl delivery pipeline') {
-    showAggregatedPipeline true
-    enableManualTriggers true
-    pipelineInstances 5
-    pipelines {
-        component('job-dsl delivery pipeline', 'job-dsl-checkout')
-    }
-}
