@@ -45,3 +45,16 @@ job('job-dsl-deploy') {
       }
 }
 
+listView('List View DSLs') {
+    jobs {
+        regex('job-dsl-.+')
+    }
+    columns {
+        status()
+        name()
+        lastSuccess()
+        lastFailure()
+        lastDuration()
+        buildButton()
+    }
+}
